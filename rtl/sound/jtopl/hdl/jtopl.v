@@ -251,16 +251,6 @@ jtopl_acc u_acc(
     .snd        ( snd           )
 );
 
-`ifdef SIMULATION
-integer fsnd;
-initial begin
-    fsnd=$fopen("jtopl.raw","wb");
-end
-
-always @(posedge zero) begin
-    $fwrite(fsnd,"%u", {snd, snd});
-end
-`endif
 
 endmodule
     
